@@ -303,7 +303,7 @@ export default function SetupScreen({ onStarted }) {
               <Icon name="support_agent" className="text-[18px]" />
             </div>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Responde por texto durante el ejercicio. Tus respuestas se usan solo para generar la retroalimentación.
+              Responde por texto durante el ejercicio. Tus respuestas se guardan temporalmente (24 horas) y se usan solo para generar tu retroalimentación.
             </p>
           </div>
         </div>
