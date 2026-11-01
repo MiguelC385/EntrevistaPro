@@ -1,5 +1,6 @@
-# Secretos
+# Secretos y claves (nunca se suben)
 .env
+.env.*
 *.env
 !.env.example
 
@@ -8,6 +9,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+.pytest_cache/
 
 # Base de datos local
 *.db
@@ -15,3 +17,10 @@ venv/
 # Node
 node_modules/
 dist/
+
+# Registros y archivos del sistema
+*.log
+.DS_Store
+# Cache de Vite y copias de respaldo
+.vite/
+*.zip

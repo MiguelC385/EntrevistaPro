@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Paleta: claro (por defecto) y oscuro (clase "dark" en <html>) */
+:root {
+  --c-background: 250 248 255;
+  --c-surface: 250 248 255;
+  --c-surface-dim: 210 217 244;
+  --c-surface-bright: 250 248 255;
+  --c-surface-container-lowest: 255 255 255;
+  --c-surface-container-low: 242 243 255;
+  --c-surface-container: 234 237 255;
+  --c-surface-container-high: 226 231 255;
+  --c-surface-container-highest: 218 226 253;
+  --c-surface-variant: 218 226 253;
+  --c-surface-tint: 77 68 227;
+  --c-on-surface: 19 27 46;
+  --c-on-background: 19 27 46;
+  --c-on-surface-variant: 70 69 85;
+  --c-inverse-surface: 40 48 68;
+  --c-inverse-on-surface: 238 240 255;
+  --c-inverse-primary: 195 192 255;
+  --c-outline: 119 117 135;
+  --c-outline-variant: 199 196 216;
+  --c-primary: 53 37 205;
+  --c-on-primary: 255 255 255;
+  --c-primary-container: 79 70 229;
+  --c-on-primary-container: 218 215 255;
+  --c-primary-fixed: 226 223 255;
+  --c-primary-fixed-dim: 195 192 255;
+  --c-on-primary-fixed: 15 0 105;
+  --c-on-primary-fixed-variant: 51 35 204;
+  --c-btn: 53 37 205;
+  --c-secondary: 0 108 73;
+  --c-on-secondary: 255 255 255;
+  --c-secondary-container: 108 248 187;
+  --c-on-secondary-container: 0 113 77;
+  --c-secondary-fixed: 111 251 190;
+  --c-secondary-fixed-dim: 78 222 163;
+  --c-on-secondary-fixed: 0 33 19;
+  --c-on-secondary-fixed-variant: 0 82 54;
+  --c-tertiary: 87 26 192;
+  --c-on-tertiary: 255 255 255;
+  --c-tertiary-container: 111 61 217;
+  --c-on-tertiary-container: 227 213 255;
+  --c-tertiary-fixed: 233 221 255;
+  --c-tertiary-fixed-dim: 208 188 255;
+  --c-on-tertiary-fixed: 35 0 92;
+  --c-on-tertiary-fixed-variant: 85 22 190;
+  --c-error: 186 26 26;
+  --c-on-error: 255 255 255;
+  --c-error-container: 255 218 214;
+  --c-on-error-container: 147 0 10;
+}
+
+.dark {
+  color-scheme: dark;
+  --c-background: 11 15 25;
+  --c-surface: 11 15 25;
+  --c-surface-dim: 11 15 25;
+  --c-surface-bright: 30 41 59;
+  --c-surface-container-lowest: 17 24 39;
+  --c-surface-container-low: 23 32 51;
+  --c-surface-container: 30 41 59;
+  --c-surface-container-high: 39 52 73;
+  --c-surface-container-highest: 51 65 85;
+  --c-surface-variant: 51 65 85;
+  --c-surface-tint: 165 180 252;
+  --c-on-surface: 248 250 252;
+  --c-on-background: 248 250 252;
+  --c-on-surface-variant: 170 180 197;
+  --c-inverse-surface: 226 232 240;
+  --c-inverse-on-surface: 30 41 59;
+  --c-inverse-primary: 79 70 229;
+  --c-outline: 100 116 139;
+  --c-outline-variant: 51 65 85;
+  --c-primary: 165 180 252;
+  --c-on-primary: 255 255 255;
+  --c-primary-container: 79 70 229;
+  --c-on-primary-container: 224 231 255;
+  --c-primary-fixed: 35 38 95;
+  --c-primary-fixed-dim: 165 180 252;
+  --c-on-primary-fixed: 224 231 255;
+  --c-on-primary-fixed-variant: 199 210 254;
+  --c-btn: 79 70 229;
+  --c-secondary: 78 222 163;
+  --c-on-secondary: 0 33 19;
+  --c-secondary-container: 6 78 59;
+  --c-on-secondary-container: 111 251 190;
+  --c-secondary-fixed: 10 61 48;
+  --c-secondary-fixed-dim: 78 222 163;
+  --c-on-secondary-fixed: 209 250 229;
+  --c-on-secondary-fixed-variant: 111 251 190;
+  --c-tertiary: 208 188 255;
+  --c-on-tertiary: 59 0 144;
+  --c-tertiary-container: 111 61 217;
+  --c-on-tertiary-container: 227 213 255;
+  --c-tertiary-fixed: 46 26 94;
+  --c-tertiary-fixed-dim: 208 188 255;
+  --c-on-tertiary-fixed: 233 221 255;
+  --c-on-tertiary-fixed-variant: 208 188 255;
+  --c-error: 255 180 171;
+  --c-on-error: 105 0 5;
+  --c-error-container: 147 0 10;
+  --c-on-error-container: 255 218 214;
+}
+
+/* En oscuro las sombras casi no se ven: se reemplazan por un borde sutil */
+.dark .shadow-sm,
+.dark .shadow-md {
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
+/* Transicion suave solo mientras se cambia de tema */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, fill 0.3s ease, stroke 0.3s ease !important;
+}
+
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
+}
+
+/* Accesibilidad: si el usuario pidio reducir el movimiento, se desactivan animaciones y transiciones
+   (el indicador de carga sigue girando para que no parezca congelado). */
+@media (prefers-reduced-motion: reduce) {
+  *:not(.animate-spin), *:not(.animate-spin)::before, *:not(.animate-spin)::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
