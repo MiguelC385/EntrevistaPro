@@ -94,7 +94,7 @@ def _parse_json(text: str) -> dict:
 RETRY_CODES = {429, 500, 503, 504}  # errores temporales de Google
 
 
-def _call(system: str, user: str, attempts: int = 4) -> dict:
+def _call(system: str, user: str, attempts: int = 3) -> dict:
     """Llama a Gemini y devuelve un dict.
 
     Reintenta con pausas (1s, 2s, 4s) si Google esta saturado y, si hay un
